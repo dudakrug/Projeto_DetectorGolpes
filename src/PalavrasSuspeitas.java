@@ -15,8 +15,8 @@ public class PalavrasSuspeitas
     //Classes para cada tipo de palavra
     public static class Dados_Pessoais
     {
-        String palavra;
-        int valor;
+        private final String palavra;
+        private final int valor;
 
         public Dados_Pessoais(String palavra, int valor)
         {
@@ -24,12 +24,22 @@ public class PalavrasSuspeitas
             this.palavra = palavra;
             this.valor = valor;
         }
+
+        public String getPalavra()
+        {
+            return palavra;
+        }
+
+        public int getValor()
+        {
+            return valor;
+        }
     }
 
     public static class Urgencia
     {
-        String palavra;
-        int valor;
+        private final String palavra;
+        private final int valor;
 
         //precisa ter o mesmo nome a classe e esse metodo, ex: Urgencia
         public Urgencia(String palavra, int valor)
@@ -37,17 +47,35 @@ public class PalavrasSuspeitas
             this.palavra = palavra;
             this.valor = valor;
         }
+        public String getPalavra()
+        {
+            return palavra;
+        }
+
+        public int getValor()
+        {
+            return valor;
+        }
     }
 
     public static class Financeiro
     {
-        String palavra;
-        int valor;
+        private final String palavra;
+        private final int valor;
 
         public Financeiro(String palavra, int valor)
         {
             this.palavra = palavra;
             this.valor = valor;
+        }
+        public String getPalavra()
+        {
+            return palavra;
+        }
+
+        public int getValor()
+        {
+            return valor;
         }
     }
 
@@ -69,7 +97,8 @@ public class PalavrasSuspeitas
     }
 
 
-    public static void Add(){
+    static
+    {
         //Noma da variavel de armazenamento.add(new nome da classe(variaveis globais)
         listaDePalavrasDados.add(new Dados_Pessoais("senha", 20));
         listaDePalavrasDados.add(new Dados_Pessoais("cpf", 20));
