@@ -13,8 +13,8 @@ public class Main {
 
         mensagem = scanner.nextLine();
 
+        //TextoUtils.capturaLink(mensagem);
         TextoUtils.recebeMensagem(mensagem);
 
-        //String n = TextoUtils.nome;
     }
 }
