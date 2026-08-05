@@ -6,12 +6,20 @@ public class Resultados
     {
         DetectorGolpe analise = new DetectorGolpe();
 
+        analise.definirPontuacao();
+        analise.definirClassificacao();
+
         String classificacao = analise.getClassificacao();
+
         int pontos = analise.getPontuacao();
+
         ArrayList<String> motivos = analise.getMotivos();
 
         System.out.println("Classificação da mensagem: "+ classificacao);
         System.out.println("Pontuação da mensagem: "+ pontos);
-        System.out.println("Motivo da classificação da mensagem: "+ motivos);
+
+        if (!motivos.isEmpty()){
+            System.out.println("Motivo da classificação da mensagem: "+ motivos);
+        }
     }
 }
