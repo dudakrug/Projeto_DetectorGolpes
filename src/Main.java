@@ -24,7 +24,12 @@ public class Main {
 
         }
 
+        //processamento da entrada do usuário
         TextoUtils.recebeMensagem(mensagem.toString());
+
+        Resultados resultados = new Resultados();
+        resultados.exibirResultado();
+
     }
 
 }
