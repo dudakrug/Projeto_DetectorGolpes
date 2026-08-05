@@ -1,20 +1,30 @@
 import java.util.Scanner;
 
 public class Main {
+
     public static void main(String[] args) {
-        System.out.printf("Hello and welcome!");
-        String mensagem;
+
         Scanner scanner = new Scanner(System.in);
 
+        StringBuilder mensagem = new StringBuilder();
 
-        mensagem = scanner.nextLine();
+        System.out.println("Cole a mensagem.");
+        System.out.println("Digite FIM para finalizar.\n");
 
-        TextoUtils.recebeMensagem(mensagem);
+        while (true) {
 
-        mensagem = scanner.nextLine();
+            String linha = scanner.nextLine();
 
-        //TextoUtils.capturaLink(mensagem);
-        TextoUtils.recebeMensagem(mensagem);
+            if (linha.equalsIgnoreCase("FIM")) {
+                break;
+            }
 
+            mensagem.append(linha);
+            mensagem.append(" ");
+
+        }
+
+        TextoUtils.recebeMensagem(mensagem.toString());
     }
+
 }
