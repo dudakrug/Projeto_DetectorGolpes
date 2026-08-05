@@ -4,13 +4,18 @@ import java.util.List;
 public class DetectorGolpe {
     private int pontuacao; //pontuacao das mensagens
     private String classificacao; //classificacao final da mensagem
-    private ArrayList<String> motivos;//motivos caso o texto seja suspeito
+    private ArrayList<String> motivos = new ArrayList<>();//motivos caso o texto seja suspeito
 
     public void definirPontuacao(){
         String[] palavrasDoTexto = TextoUtils.palavrasTexto;
+        List<String> link = TextoUtils.links;
         List<PalavrasSuspeitas.Dados_Pessoais> listaDePalavrasDados = PalavrasSuspeitas.getListaDePalavrasDados();
         List<PalavrasSuspeitas.Financeiro> listaDePalavrasFinanceiro = PalavrasSuspeitas.getListaDePalavrasFinenceiro();
         List<PalavrasSuspeitas.Urgencia> listaDePalavrasUrgencia = PalavrasSuspeitas.getListaDePalavrasUrgencia();
+
+        if (!link.isEmpty()){
+            pontuacao += 25;
+        }
 
         //dados = 20, financeiro = 15, urgencia = 10
         for(PalavrasSuspeitas.Dados_Pessoais dadosPessoais : listaDePalavrasDados) {
@@ -44,10 +49,10 @@ public class DetectorGolpe {
     }
 
     public void definirClassificacao() {
-        if(pontuacao <= 20){
+        if(pontuacao < 20){
             classificacao = "Provavelmente legítma";
         }
-        else if(pontuacao <= 40) {
+        else if(pontuacao >= 20 && pontuacao <= 40) {
             classificacao = "Suspeita";
         }
         else{
