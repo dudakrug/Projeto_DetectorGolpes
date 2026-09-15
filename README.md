@@ -8,7 +8,7 @@ O código deste projeto foi desenvolvido por um time de 3 pessoas - Eduarda Krug
 
 O código começa a funcionar assim que o usuário envia a mensagem através do terminal, logo após, o código analisa se a mensagem possui: link desconhecido, solicitação de dados pessoais, urgência forçada e ofertas atrativas. Cada palavra encontrada no texto e que esteja em alguma das 3 listas, tais como - dados, banco, pix, imediatamente, urgente - somam para a pontuação final. 
 
-!image.png
+![Lista de palavras para pontuação](assets/lista_palavras.png)
 
 As palavras estão separadas pelas classes “Dados_Pessoais”, “Financeiro” e “Urgência”, cada uma delas tendo uma quantidade de pontos pré definida em relação a classe que ela pertence.
 
@@ -24,17 +24,15 @@ Demonstração prática da interação do usuário com o terminal:
 
 "Olá!! Seu banco detectou um acesso suspeito usando seus dados. Clique imediatamente no link abaixo para confirmar se foi você https://banco-seguro-confiavel.xyz"
 
-!image.png
-
-### Código explicado por um dos desenvolvedores
-
-* vídeo do valgoi * 
-
-Projeto_DetectorGolpes – Main.java 2026-09-08 18-24-15.mp4
+![Exemplo da interação do usuário com o terminal](assets/banco_dados.png)
 
 ### Lógica aplicada no desenvolvimento do código
 
- * diagrama *
+![Fluxograma](assets/diagrama.jpg)
+
+### Código explicado por um dos desenvolvedores
+
+![Funcionamento do codigo na pratica](assets/exemplo_codigo.gif)
 
 ### Pré-requisitos para a instalação do código
 
