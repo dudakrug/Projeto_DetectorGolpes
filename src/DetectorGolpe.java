@@ -4,7 +4,7 @@ import java.util.List;
 public class DetectorGolpe {
     private int pontuacao; //pontuacao das mensagens
     private String classificacao; //classificacao final da mensagem
-    private ArrayList<String> motivos;//motivos caso o texto seja suspeito
+    private ArrayList<String> motivos; //motivos caso o texto seja suspeito
 
     public void definirPontuacao(){
         String[] palavrasDoTexto = TextoUtils.palavrasTexto;
